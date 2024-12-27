@@ -1,0 +1,4 @@
+runtime: python312  # Specifies the runtime environment, here Python 3.12
+
+# The entrypoint to start the Streamlit app
+entrypoint: streamlit run app.py --server.port $PORT
