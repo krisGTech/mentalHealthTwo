@@ -1,13 +1,13 @@
-imbalanced_learn==0.12.3
+imbalanced-learn==0.12.3
 joblib==1.4.2
-matplotlib==3.8.4
-numpy==2.2.1
-pandas==2.2.3
-Pillow==11.0.0
-plotly==5.22.0
-scikit_learn==1.6.0
-scipy==1.14.1
-seaborn==0.13.2
-streamlit==1.32.0
-google-cloud-aiplatform #this is required
-google-cloud-logging  #this is required
+matplotlib>=3.8.4
+numpy>=1.26.0,<2.0
+pandas>=2.2.3
+Pillow>=10.0.0
+plotly>=5.22.0
+scikit-learn>=1.6.0
+scipy>=1.11.3,<2.0
+seaborn>=0.13.2
+streamlit>=1.32.0
+google-cloud-aiplatform>=1.30.0  # Ensure compatibility with cloud SDKs
+google-cloud-logging>=3.12.0    # Ensure compatibility with logging SDKs
