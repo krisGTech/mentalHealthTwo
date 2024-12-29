@@ -176,12 +176,12 @@ full_pipeline = Pipeline(steps=[
 ])
 
 # Split data
-df_tr = pd.read_csv('/Users/krisghimire/Desktop/mental_health_strem_app/Data/train.csv')
+df_tr = pd.read_csv('Data/train.csv')
 df_tr.columns = [col.upper().replace('.','_').strip() for col in df_tr.columns]
 x_Train,x_Test,y_Train,y_Test = train_test_split(df_tr.drop(columns=['DISORDER']),df_tr['DISORDER'],test_size=0.3,random_state=1)
 
 # Load the data preprocessor and model
-model_ = joblib.load("/Users/krisghimire/Desktop/mental_health_strem_app/mental_health_pred_model.pkl")
+model_ = joblib.load("mental_health_pred_model.pkl")
 
 # Custom CSS for Helvetica font
 # st.markdown("""
@@ -268,11 +268,11 @@ with col1:
              """)
 with col2:
     #Display the image in the second column
-    image = Image.open("/Users/krisghimire/Desktop/mental_health_strem_app/images/julienmh.jpg")
+    image = Image.open("images/julienmh.jpg")
     st.image(image) #, use_container_width=True
  
 # Add logo:
-st.sidebar.image("/Users/krisghimire/Desktop/mental_health_strem_app/images/logo2.png", width=90)
+st.sidebar.image("images/logo2.png", width=90)
 #st.sidebar.write('Mental Health Ai')
 st.sidebar.markdown('<p style="font-size:20px; font-weight:bold;">MansikAi - Mental Health Assistance</p>', unsafe_allow_html=True)
 
@@ -280,7 +280,7 @@ st.sidebar.markdown('<p style="font-size:20px; font-weight:bold;">MansikAi - Men
 #     # Insert logo on the sidebar
 #     col1, col2 = st.columns([2, 1])
 #     with col1:
-#         st.image("/Users/krisghimire/Desktop/mental_health_strem_app/images/logo2.png", width=100)
+#         st.image("images/logo2.png", width=100)
 #     with col2:
 #         st.write("MansikAi: Mental Health Assistance")
 
@@ -593,7 +593,7 @@ with tabs[3]:
     
     
 with tabs[4]:
-    df_metric = pd.read_csv('/Users/krisghimire/Desktop/mental_health_strem_app/Data/prediction_cost_savings.csv')
+    df_metric = pd.read_csv('Data/prediction_cost_savings.csv')
     df_metric['Date'] = pd.to_datetime(df_metric['Date']) 
     df_metric['Short_Date'] = df_metric['Date'].dt.strftime('%m-%y')  # Format to MM-YY
     st.subheader('Model ROI Metrics')
